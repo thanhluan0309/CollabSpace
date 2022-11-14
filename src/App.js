@@ -1,57 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
-
+import React from "react";
+import { Luan } from "./component/luan/luan";
+import "./App.css";
+import { Dang } from "./component/dang/dang";
+import { Tuan } from "./component/tuan/tuan";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Dashboard } from "./component/DashBoard";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/luan" element={<Luan></Luan>}></Route>
+        <Route path="/dang" element={<Dang></Dang>}></Route>
+        <Route path="/tuan" element={<Tuan></Tuan>}></Route>
+        <Route path="/" element={<Dashboard></Dashboard>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
