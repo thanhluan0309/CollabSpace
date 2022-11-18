@@ -7,6 +7,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
+  nhanhai,
 } from "./counterSlice";
 import styles from "./Counter.module.css";
 
@@ -19,6 +20,7 @@ export function Counter() {
 
   return (
     <div>
+      {console.log("count", count)}
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -49,6 +51,12 @@ export function Counter() {
         >
           Add Amount
         </button>
+        {/* <button
+          className={styles.button}
+          onClick={() => dispatch(nhanhai(incrementValue))}
+        >
+          x2
+        </button> */}
         <button
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(incrementValue))}
